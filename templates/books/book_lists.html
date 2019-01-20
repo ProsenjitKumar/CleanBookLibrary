@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Book</title>
+</head>
+<body>
+
+{% for object in object_list %}
+
+    <div>
+        <label><a href="{% url 'book_details' object.id %}"><img src="{{ MEDIA_URL }}{{ object.image.url }}" style="width: 150px;height: 200px"></a></label>
+        {{ object.title }}<br>
+    </div>
+
+{% endfor %}
+
+</body>
+</html>

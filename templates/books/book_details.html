@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ object.title }}</title>
+</head>
+<body>
+
+<div style="width: 450px;height: 350px">
+    <p style="width: 250px;height: 350px"><a href="{% url 'book_details' object.id %}"><img src="{{ MEDIA_URL }}{{ object.image.url }}"></a></p>
+    <p style="color: #06a019; font-size: 30px">Book Name: {{ object.title }}</p>
+    <p style="color: #06a019; font-size: 30px">ISBN: {{ object.isbn }}</p>
+    <p style="color: #06a019; font-size: 30px">Publisher: {{ object.publisher }}</p>
+    <p style="color: #06a019; font-size: 30px">Author: {% for author in object.author.all %} {{ author }} <br> {% endfor %}</p>
+    <p style="color: #11a06c">Summary: {{ object.summary }}</p>
+    <p style="color: #06a019; font-size: 30px">Category: {% for category in object.category.all %} {{ category }} <br> {% endfor %}</p>
+</div>
+
+</body>
+</html>
