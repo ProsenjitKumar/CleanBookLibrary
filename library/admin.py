@@ -5,6 +5,8 @@ from .models import (
     Book,
     BookInstance,
     Currency,
+    Language,
+    Tag,
 )
 
 
@@ -45,4 +47,20 @@ class CurrencyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Currency, CurrencyAdmin)
+
+
+class LanguageAdmin(admin.ModelAdmin):
+    list_display = ['language']
+    search_fields = ['language']
+
+
+admin.site.register(Language, LanguageAdmin)
+
+
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    search_fields = ['name']
+
+
+admin.site.register(Tag, TagAdmin)
 

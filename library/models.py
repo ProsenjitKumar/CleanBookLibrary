@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.urls import reverse
+#from autoslug import AutoSlugField
 
 
 class Category(models.Model):
@@ -15,6 +16,13 @@ class Currency(models.Model):
 
     def __str__(self):
         return self.currency
+
+
+class Language(models.Model):
+    language = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.language
 
 
 class Author(models.Model):
@@ -39,14 +47,18 @@ class Book(models.Model):
     image = models.ImageField(upload_to='book_photos/', blank=False, null=False)
     publisher = models.CharField(max_length=255)
     author = models.ManyToManyField(Author, help_text='Select Author name')
-
+    translation = models.ManyToManyField(Language, related_name='languages', help_text='Select Language')
+    edition = models.IntegerField()
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
+    copy = models.PositiveSmallIntegerField()
     summary = models.TextField(max_length=1000, help_text='Enter a brief description of the book')
     isbn = models.CharField('ISBN', max_length=13,
                             help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
-    category = models.ManyToManyField(Category, help_text='Select a genre for this book')
+    category = models.ManyToManyField(Category, help_text='Select category for this book')
     published = models.DateTimeField(auto_now_add=True)
     price = models.IntegerField()
     currency = models.ForeignKey(Currency, on_delete=models.CASCADE)
+    #slug = AutoSlugField(populate_from=['title', 'summary', 'get_author_first_name'])
 
     def __str__(self):
         return self.title
@@ -54,6 +66,20 @@ class Book(models.Model):
     def get_absolute_url(self):
         """Returns the url to access a detail record for this book."""
         return reverse('book_details', args=[str(self.id)])
+
+
+# Declare the ForeignKey with related_query_name
+class Tag(models.Model):
+    article = models.ForeignKey(
+        Book,
+        on_delete=models.CASCADE,
+        related_name="tags",
+        related_query_name="tag",
+    )
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
 
 
 class BookInstance(models.Model):

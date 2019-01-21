@@ -4,8 +4,7 @@ from .views import (
     BookDetails
 )
 
-
 urlpatterns = [
     re_path('^$', BookList.as_view(), name='book_list'),
-    re_path('(?P<pk>\d+)/', BookDetails.as_view(), name='book_details'),
+    re_path('(?P<pk>\d+)/$', BookDetails.as_view(), name='book_details'),
 ]
