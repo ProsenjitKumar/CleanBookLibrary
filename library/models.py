@@ -1,12 +1,16 @@
 import uuid
 from django.db import models
 from django.urls import reverse
-#from autoslug import AutoSlugField
 from django.utils.text import slugify
 
 
+class EntryQuerySet(models.QuerySet):
+    def published(self):
+        return self.filter(publish=True)
+
+
 class Category(models.Model):
-    name = models.CharField(max_length=200, help_text='Enter a book genre (e.g. Science Fiction)')
+    name = models.CharField(max_length=200, help_text='Enter a book Category (e.g. Science Fiction)')
     slug = models.SlugField()
 
     def save(self, *args, **kwargs):
@@ -53,6 +57,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
+    slug = models.SlugField()
     image = models.ImageField(upload_to='book_photos/', blank=False, null=False)
     publisher = models.CharField(max_length=255)
     author = models.ManyToManyField(Author, help_text='Select Author name')
@@ -67,10 +72,18 @@ class Book(models.Model):
     published = models.DateTimeField(auto_now_add=True)
     price = models.IntegerField()
     currency = models.ForeignKey(Currency, on_delete=models.CASCADE)
-    #slug = AutoSlugField(populate_from=['title', 'summary', 'get_author_first_name'])
+    publish = models.BooleanField(default=True)
+    objects = EntryQuerySet.as_manager()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Book, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title
+
+    # def get_absolute_url(self):
+    #     return "/book_list/%s/" %(self.id)
 
     def get_absolute_url(self):
         """Returns the url to access a detail record for this book."""

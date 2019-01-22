@@ -17,7 +17,39 @@
     <p style="color: #06a019; font-size: 30px">Author: {% for author in object.author.all %} {{ author }} <br> {% endfor %}</p>
     <p style="color: #11a06c">Summary: {{ object.summary }}</p>
     <p style="color: #06a019; font-size: 30px">Category: {% for category in object.category.all %} {{ category }} <br> {% endfor %}</p>
-</div>
+    <p style="color: #06a019; font-size: 30px">Published: {{ object.published }}</p>
+    <p>Posted {{ object.published|timesince }} ago</p>
+    {% load tz %}
+    {% localtime on %}
+        <p>Todays Date: {{ now|date }} {{ now|time }}</p>
+    {% endlocaltime %}
 
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        {% if category %}
+        <h1>{{ category_name }}</h1>
+            {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No pages currently in category.</strong>
+            {% endif %}
+        {% else %}
+            The specified category {{ category_name }} does not exist!
+        {% endif %}
+    </body>
+</html>
+-->
+
+</div>
 </body>
 </html>
