@@ -1,0 +1,14 @@
+{% extends 'books/base.html' %}
+{% block title %}<title>Category</title>{% endblock %}
+{% block content %}
+
+    <ul>
+        {% for object in category_book_list %}
+        <div>
+            <li><a href="{% url 'category_details' object.pk %}"></li>
+            {{ object.name }}<br>
+        </div>
+        {% endfor %}<br>
+    </ul>
+
+{% endblock %}

@@ -1,153 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Book</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-          font-family: Arial;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-
-        form.example input[type=text] {
-          padding: 10px;
-          font-size: 17px;
-          border: 1px solid grey;
-          float: left;
-          width: 80%;
-          background: #f1f1f1;
-        }
-
-        form.example button {
-          float: left;
-          width: 20%;
-          padding: 10px;
-          background: #2196F3;
-          color: white;
-          font-size: 17px;
-          border: 1px solid grey;
-          border-left: none;
-          cursor: pointer;
-        }
-
-        form.example button:hover {
-          background: #0b7dda;
-        }
-
-        form.example::after {
-          content: "";
-          clear: both;
-          display: table;
-        }
-
-         /* Navbar container */
-        .navbar {
-          overflow: hidden;
-          background-color: #333;
-          font-family: Arial;
-        }
-
-        /* Links inside the navbar */
-        .navbar a {
-          float: left;
-          font-size: 16px;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
-        /* The dropdown container */
-        .dropdown {
-          float: left;
-          overflow: hidden;
-        }
-
-        /* Dropdown button */
-        .dropdown .dropbtn {
-          font-size: 16px;
-          border: none;
-          outline: none;
-          color: white;
-          padding: 14px 16px;
-          background-color: inherit;
-          font-family: inherit; /* Important for vertical align on mobile phones */
-          margin: 0; /* Important for vertical align on mobile phones */
-        }
-
-        /* Add a red background color to navbar links on hover */
-        .navbar a:hover, .dropdown:hover .dropbtn {
-          background-color: red;
-        }
-
-        /* Dropdown content (hidden by default) */
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f9f9f9;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-        }
-
-        /* Links inside the dropdown */
-        .dropdown-content a {
-          float: none;
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-          text-align: left;
-        }
-
-        /* Add a grey background color to dropdown links on hover */
-        .dropdown-content a:hover {
-          background-color: #ddd;
-        }
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-
-     </style>
-</head>
-<body>
-
-<div class="navbar">
-  <a href="{% url 'book_list' %}">Home</a>
-  <a href="#news">News</a>
-  <div class="dropdown">
-    <button class="dropbtn">Category
-      <i class="fa fa-caret-down"></i>
-    </button>
-      {% for object in book_list %}
-    <div class="dropdown-content">
-       <a href="#">{% for category in object.category.all %} {{ category }} {% endfor %}</a>
-    </div>
-  </div>
-    {% endfor %}
-</div>
-
-<br>
-<form class="example" action="" style="margin:auto;max-width:300px">
-  <input type="text" name='q' placeholder="Search...">
-  <button type="submit" value='{{ request.GET.q }}'><i class="fa fa-search"></i></button>
-</form>
-
+{% extends 'books/base.html' %}
+{% block title %}<title>Home</title>{% endblock %}
+{% block content %}
     {% for object in object_list %}
-
         <div>
             <label><a href="{% url 'book_details' object.pk %}"><img src="{{ MEDIA_URL }}{{ object.image.url }}" style="width: 150px;height: 200px"></a></label>
             {{ object.title }}<br>
         </div>
+    {% endfor %}<br>
 
-    {% endfor %}
 
-</body>
-</html>
+    <h6>Categories</h6>
+  {% if category_book_list %}
+    <ul>
+      <li class="category-item">
+        <a href="{% url 'book_list' %}">All categories</a>
+      </li>
+      {% for category in category_book_list %}
+        <li class="category-item">
+          <a href="{% url 'category' category.slug %}">{{ category.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+      <p>No categories</p>
+  {% endif %}
+
+
+{% endblock %}
