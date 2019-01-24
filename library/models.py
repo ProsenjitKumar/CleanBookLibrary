@@ -48,6 +48,18 @@ class Language(models.Model):
         return self.language
 
 
+class Editor(models.Model):
+    editor = models.CharField(max_length=190)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.editor)
+        super(Editor, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.editor
+
+
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
@@ -71,31 +83,40 @@ class Author(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=200)
-    slug = models.SlugField()
-    image = models.ImageField(upload_to='book_photos/', blank=False, null=False)
-    publisher = models.CharField(max_length=255)
+    name_of_the_book = models.CharField(max_length=200)
+    edition = models.CharField(max_length=13)
     author = models.ManyToManyField(Author, help_text='Select Author name')
-    translation = models.ManyToManyField(Language, related_name='languages', help_text='Select Language')
-    edition = models.IntegerField()
-    language = models.ForeignKey(Language, on_delete=models.CASCADE)
-    copy = models.PositiveSmallIntegerField()
-    summary = models.TextField(max_length=1000, help_text='Enter a brief description of the book')
+    editor = models.ManyToManyField(Editor, help_text='Select Editor name')
+    translator = models.ManyToManyField(Language, related_name='languages', help_text='Select Language')
+    publisher = models.CharField(max_length=255)
+    place = models.CharField(max_length=190)
+    month = models.CharField(max_length=20)
+    year = models.IntegerField()
     isbn = models.CharField('ISBN', max_length=13,
-                            help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
-    category = models.ManyToManyField(Category, help_text='Select category for this book')
-    published = models.DateTimeField(auto_now_add=True)
-    price = models.IntegerField()
+                            help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>',
+                            blank=True, null=True)
     currency = models.ForeignKey(Currency, on_delete=models.CASCADE)
+    price = models.IntegerField()
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
+    category = models.ManyToManyField(Category, help_text='Select category for this book')
+    pages = models.IntegerField()
+    copy = models.PositiveSmallIntegerField(blank=True, null=True)
+    summary = models.TextField(max_length=1000, help_text='Enter a brief description of the book')
+    image = models.ImageField(upload_to='book_photos/', blank=True, null=True)
+    published = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField()
     publish = models.BooleanField(default=True)
     objects = EntryQuerySet.as_manager()
 
+    class Meta:
+        ordering = ["-published"]
+
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.name_of_the_book)
         super(Book, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.title
+        return self.name_of_the_book
 
     # def get_absolute_url(self):
     #     return "/book_list/%s/" %(self.id)

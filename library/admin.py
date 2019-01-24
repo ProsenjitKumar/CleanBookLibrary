@@ -7,6 +7,7 @@ from .models import (
     Currency,
     Language,
     Tag,
+    Editor,
 )
 
 
@@ -20,9 +21,9 @@ admin.site.register(Category, CategoryAdmin)
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['title', 'isbn', 'published', 'publisher']
-    search_fields = ['title', 'isbn']
-    prepopulated_fields = {'slug': ('title',)}
+    list_display = ['name_of_the_book', 'isbn', 'published', 'publisher']
+    search_fields = ['name_of_the_book', 'isbn']
+    prepopulated_fields = {'slug': ('name_of_the_book',)}
 
 
 admin.site.register(Book, BookAdmin)
@@ -63,6 +64,15 @@ class LanguageAdmin(admin.ModelAdmin):
 admin.site.register(Language, LanguageAdmin)
 
 
+class EditorAdmin(admin.ModelAdmin):
+    list_display = ['editor']
+    search_fields = ['editor']
+    prepopulated_fields = {'slug': ('editor',)}
+
+
+admin.site.register(Editor, EditorAdmin)
+
+
 class TagAdmin(admin.ModelAdmin):
     list_display = ['name']
     search_fields = ['name']
@@ -70,4 +80,3 @@ class TagAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Tag, TagAdmin)
-

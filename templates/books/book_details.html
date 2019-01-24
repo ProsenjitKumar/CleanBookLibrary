@@ -1,30 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ object.title }}</title>
-</head>
-<body>
+{% extends 'books/base.html' %}
+{% block title %}<title>{{ object.name_of_the_book }}</title>{% endblock %}
+{% block content %}
 
-<div style="width: 450px;height: 350px">
-    <p style="width: 250px;height: 350px"><img src="{{ MEDIA_URL }}{{ object.image.url }}"></p>
-    <p style="color: #06a019; font-size: 30px">বইয়ের নাম: {{ object.title }}</p>
-    <p style="color: #06a019; font-size: 30px">ISBN: {{ object.isbn }}</p>
-    <p style="color: #06a019; font-size: 30px">অনুবাদক: {% for translation in object.translation.all %} {{ translation }}<br> {% endfor %}</p>
-    <p style="color: #06a019; font-size: 30px">সংস্করণ: {{ object.edition }}</p>
-    <p style="color: #06a019; font-size: 30px">Language: {{ object.language }}</p>
-    <p style="color: #06a019; font-size: 30px">Publisher: {{ object.publisher }}</p>
-    <p style="color: #06a019; font-size: 30px">Author: {% for author in object.author.all %} {{ author }} <br> {% endfor %}</p>
-    <p style="color: #11a06c">Summary: {{ object.summary }}</p>
-    <p style="color: #06a019; font-size: 30px">Category: {% for category in object.category.all %} {{ category }} <br> {% endfor %}</p>
-    <p style="color: #06a019; font-size: 30px">Published: {{ object.published }}</p>
-    <p>Posted {{ object.published|timesince }} ago</p>
-    {% load tz %}
-    {% localtime on %}
-        <p>Todays Date: {{ now|date }} {{ now|time }}</p>
-    {% endlocaltime %}
+    <div style="width: 450px;height: 350px">
+        <p style="width: 250px;height: 350px"><img src="{{ MEDIA_URL }}{{ object.image.url }}"></p>
+        <p style="color: #06a019; font-size: 30px"><span>বইয়ের নাম:</span> {{ object.name_of_the_book }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>ISBN:</span> {{ object.isbn }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>অনুবাদক:</span> {% for translation in object.translation.all %} {{ translation }}<br> {% endfor %}</p>
+        <p style="color: #06a019; font-size: 30px"><span>সংস্করণ:</span> {{ object.edition }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>Editor:</span> {{ object.editor }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>Place:</span> {{ object.place }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>Pages:</span> {{ object.pages }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>Language:</span> {{ object.language }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>Publisher:</span> {{ object.publisher }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>Author:</span> {% for author in object.author.all %} {{ author }} <br> {% endfor %}</p>
+        <p style="color: #11a06c"><span>Summary:</span> {{ object.summary }}</p>
+        <p style="color: #06a019; font-size: 30px"><span>Category:</span> {% for category in object.category.all %} {{ category }} <br> {% endfor %}</p>
+        <p style="color: #06a019; font-size: 30px"><span>Published:</span> {{ object.published }}</p>
+        <p><span>Posted</span> {{ object.published|timesince }} <span>ago</span></p>
+        {% load tz %}
+        {% localtime on %}
+            <p><span>Todays Date:</span> {{ now|date }} {{ now|time }}</p>
+        {% endlocaltime %}
 
-</div>
+    </div>
 
-</body>
-</html>
+{% endblock %}

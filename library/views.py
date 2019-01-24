@@ -23,14 +23,13 @@ class BookList(ListView):
         'author_list': Author.objects.all(),
         'language_list': Language.objects.all(),
     }
-    ordering = ['-published']
 
     def get_queryset(self):
         query = self.request.GET.get('q')
         if query:
             object_list = self.model.objects.filter(
-                Q(title__icontains=query) |
-                Q(author__first_name__contains=query) |
+                Q(name_of_the_book__icontains=query) |
+                Q(author__first_name__icontains=query) |
                 Q(category__name__icontains=query)
             )
         else:
@@ -76,5 +75,6 @@ class BookDetails(DetailView):
         context = super().get_context_data(**kwargs)
         context['now'] = timezone.now()
         return context
+
 
 
