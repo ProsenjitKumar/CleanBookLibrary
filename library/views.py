@@ -2,7 +2,14 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from django.views.generic import \
     ListView, DetailView
-from .models import Book, Category
+from .models import (
+    Book,
+    Category,
+    Author,
+    Language,
+    Currency,
+    Tag,
+)
 from django.db.models import Q
 
 
@@ -13,6 +20,8 @@ class BookList(ListView):
     paginate_by = 12
     extra_context = {
         'category_list': Category.objects.all(),
+        'author_list': Author.objects.all(),
+        'language_list': Language.objects.all(),
     }
     ordering = ['-published']
 
@@ -28,23 +37,34 @@ class BookList(ListView):
             object_list = self.model.objects.all()
         return object_list
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(BookList, self).get_context_data(**kwargs)
-    #     books = Book.objects.all() # show all by default
-    #     # Check if the request had a GET query parameter with name 'cat'
-    #     cat = self.request.GET.get('cat', None)
-    #     if cat:
-    #         # yes, then show only that given categories products
-    #         books = books.filter(category=cat)
-    #         return books
-
 
 class SingleCategoryView(DetailView):
     model = Category
     template_name = 'books/single_category.html'
     extra_context = {
         'category_list': Category.objects.all(),
-        #'book_lists': DetailView(Book),
+        'author_list': Author.objects.all(),
+        'language_list': Language.objects.all(),
+    }
+
+
+class SingleAuthorView(DetailView):
+    model = Author
+    template_name = 'books/single_author.html'
+    extra_context = {
+        'category_list': Category.objects.all(),
+        'author_list': Author.objects.all(),
+        'language_list': Language.objects.all(),
+    }
+
+
+class SingleLanguage(DetailView):
+    model = Language
+    template_name = 'books/single_language_list.html'
+    extra_context = {
+        'category_list': Category.objects.all(),
+        'author_list': Author.objects.all(),
+        'language_list': Language.objects.all(),
     }
 
 

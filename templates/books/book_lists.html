@@ -3,27 +3,8 @@
 {% block content %}
     {% for object in object_list %}
         <div>
-            <label><a href="{% url 'book_details' object.pk %}"><img src="{{ MEDIA_URL }}{{ object.image.url }}" style="width: 150px;height: 200px"></a></label>
+            <label><a href="{% url 'library:book_details' slug=object.slug %}"><img src="{{ MEDIA_URL }}{{ object.image.url }}" style="width: 150px;height: 200px"></a></label>
             {{ object.title }}<br>
         </div>
     {% endfor %}<br>
-
-
-    <h6>Categories</h6>
-  {% if category_book_list %}
-    <ul>
-      <li class="category-item">
-        <a href="{% url 'book_list' %}">All categories</a>
-      </li>
-      {% for category in category_book_list %}
-        <li class="category-item">
-          <a href="{% url 'category' category.slug %}">{{ category.name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-      <p>No categories</p>
-  {% endif %}
-
-
 {% endblock %}

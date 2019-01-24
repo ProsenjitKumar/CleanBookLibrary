@@ -1,0 +1,42 @@
+<!-- nav bar -->
+<div class="navbar">
+
+  <a href="{% url 'book_list' %}">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Category
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-content">
+        {% for object in category_list %}
+       <a href="{% url 'single_category_details' object.pk %}">{{ object.name }}</a>
+        {% endfor %}
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Author
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-content">
+        {% for object in author_list %}
+       <a href="{% url 'single_author_details' object.pk %}">{{ object.first_name }} {{ object.last_name }}</a>
+        {% endfor %}
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Language
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-content">
+        {% for object in language_list %}
+       <a href="{% url 'single_language_list' object.pk %}">{{ object.language }}</a>
+        {% endfor %}
+    </div>
+  </div>
+
+</div>
+<!-- nav bar end -->

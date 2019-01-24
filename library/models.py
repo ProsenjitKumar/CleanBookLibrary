@@ -26,6 +26,11 @@ class Category(models.Model):
 
 class Currency(models.Model):
     currency = models.CharField(max_length=10)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.currency)
+        super(Currency, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.currency
@@ -33,6 +38,11 @@ class Currency(models.Model):
 
 class Language(models.Model):
     language = models.CharField(max_length=50)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.language)
+        super(Language, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.language
@@ -43,6 +53,11 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
     date_of_death = models.DateField('Died', null=True, blank=True)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.first_name, self.last_name)
+        super(Author, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['last_name', 'first_name']
@@ -99,6 +114,11 @@ class Tag(models.Model):
         related_query_name="tag",
     )
     name = models.CharField(max_length=255)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Tag, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -124,6 +144,12 @@ class BookInstance(models.Model):
         default='m',
         help_text='Book availability',
     )
+
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.imprint)
+        super(BookInstance, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['due_back']

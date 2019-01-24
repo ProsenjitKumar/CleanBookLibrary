@@ -1,8 +1,8 @@
 {% extends 'books/base.html' %}
-{% block title %}<title>{{ object.name }}</title>{% endblock %}
+{% block title %}<title>{{ object.language }}</title>{% endblock %}
 {% block content %}
 
-<h3>{{ object.name}}</h3>
+<h3>{{ object.language }}</h3>
 
 
     {% for book in object.book_set.all %} <a href="{% url 'library:book_details' book.slug %}">{{ book }}</a> <br>{% endfor %}<br>
