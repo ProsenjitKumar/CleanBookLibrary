@@ -2,8 +2,8 @@
 {% block title %}<title>{{ object.name_of_the_book }}</title>{% endblock %}
 {% block content %}
 
-    <div style="width: 450px;height: 350px">
-        <p style="width: 250px;height: 350px"><img src="{{ MEDIA_URL }}{{ object.image.url }}"></p>
+    <div style="padding-left: 38%">
+        <p><img src="{{ MEDIA_URL }}{{ object.image.url }}" style="width: 350px;height: 400px"></p>
         <p style="color: #06a019; font-size: 30px"><span>বইয়ের নাম:</span> {{ object.name_of_the_book }}</p>
         <p style="color: #06a019; font-size: 30px"><span>ISBN:</span> {{ object.isbn }}</p>
         <p style="color: #06a019; font-size: 30px"><span>অনুবাদক:</span> {% for translation in object.translation.all %} {{ translation }}<br> {% endfor %}</p>
@@ -17,12 +17,11 @@
         <p style="color: #11a06c"><span>Summary:</span> {{ object.summary }}</p>
         <p style="color: #06a019; font-size: 30px"><span>Category:</span> {% for category in object.category.all %} {{ category }} <br> {% endfor %}</p>
         <p style="color: #06a019; font-size: 30px"><span>Published:</span> {{ object.published }}</p>
-        <p><span>Posted</span> {{ object.published|timesince }} <span>ago</span></p>
+        <p><span>Added This Book</span> {{ object.published|timesince }} <span>ago</span></p>
         {% load tz %}
         {% localtime on %}
             <p><span>Todays Date:</span> {{ now|date }} {{ now|time }}</p>
         {% endlocaltime %}
-
     </div>
 
 {% endblock %}

@@ -1,27 +1,51 @@
 {% extends 'books/base.html' %}
 {% block title %}<title>Home</title>{% endblock %}
 {% block content %}
-    {% for object in object_list %}
-        <div>
-            <label><a href="{% url 'library:book_details' slug=object.slug %}"><img src="{{ MEDIA_URL }}{{ object.image.url }}" style="width: 150px;height: 200px"></a></label>
-            {{ object.name_of_the_book }}<br>
-        </div>
-    {% endfor %}<br>
 
-     <div class="pagination">
-        <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}" style="color: #13b521">Previous</a>
-            {% endif %}
+    <section class="blog-area section">
+		<div class="container">
 
-            <span class="current">
-                Page {{ page_obj.start_index }}{{ page_obj.number }} of {{ paginator.num_pages }}. {{ page_obj.end_index }}
-            </span>
+			<div class="row">
 
-            {% if page_obj.has_next %}
-                <a href="{{ request.path }}?page={{ page_obj.next_page_number }} {{ page_obj.object_list }}" style="color: #13b521">Next</a>
-            {% endif %}
-        </span>
-    </div>
+                {% for object in object_list %}
+
+				<div class="col-lg-4 col-md-6">
+					<div class="card h-100">
+						<div class="single-post post-style-1">
+
+							<div class="blog-info">
+
+								<a href="{% url 'library:book_details' slug=object.slug %}"><img src="{{ MEDIA_URL }}{{ object.image.url }}" style="width: 150px;height: 200px"></a>
+                                    {{ object.name_of_the_book }}
+
+							</div><!-- blog-info -->
+						</div><!-- single-post -->
+					</div><!-- card -->
+				</div><!-- col-lg-4 col-md-6 -->
+
+                {% endfor %}
+
+			</div><!-- row -->
+
+        <!-- 9. EXTRA SMALL BLOG -->
+
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" style="color: #13b521">Previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" style="color: #13b521">Next</a>
+                    {% endif %}
+                </span>
+            </div>
+
+		</div><!-- container -->
+	</section><!-- section -->
 
 {% endblock %}
