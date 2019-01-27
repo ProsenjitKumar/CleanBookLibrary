@@ -4,6 +4,7 @@
     <list default="true" id="bf18bc22-2162-46f4-a4bc-6eaf3ccf2a35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="58" column="23" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="23" />
+            <state relative-caret-position="366">
+              <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -52,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/books/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="140" column="34" selection-start-line="140" selection-start-column="34" selection-end-line="140" selection-end-column="34" />
+            <state relative-caret-position="336">
+              <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
             </state>
           </provider>
         </entry>
@@ -84,13 +85,13 @@
         <option value="$PROJECT_DIR$/templates/books/single_category.html" />
         <option value="$PROJECT_DIR$/templates/books/author.html" />
         <option value="$PROJECT_DIR$/library/urls.py" />
-        <option value="$PROJECT_DIR$/templates/books/base.html" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/CleanBookLibrary/settings.py" />
         <option value="$PROJECT_DIR$/templates/books/book_lists.html" />
         <option value="$PROJECT_DIR$/templates/books/book_details.html" />
-        <option value="$PROJECT_DIR$/library/views.py" />
         <option value="$PROJECT_DIR$/library/admin.py" />
+        <option value="$PROJECT_DIR$/templates/books/base.html" />
+        <option value="$PROJECT_DIR$/library/views.py" />
       </list>
     </option>
   </component>
@@ -193,22 +194,23 @@
       <workItem from="1548347563733" duration="9822000" />
       <workItem from="1548424451534" duration="505000" />
       <workItem from="1548454706614" duration="5233000" />
-      <workItem from="1548578281782" duration="10009000" />
+      <workItem from="1548578281782" duration="13727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72036000" />
+    <option name="totallyTimeSpent" value="75754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16537966" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29036635" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29036635" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -217,7 +219,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.27815467" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.27815467" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -409,13 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/books/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="140" column="34" selection-start-line="140" selection-start-column="34" selection-end-line="140" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -433,10 +428,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/books/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/library/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="58" column="23" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="23" />
+        <state relative-caret-position="366">
+          <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

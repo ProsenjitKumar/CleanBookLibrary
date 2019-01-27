@@ -120,6 +120,7 @@ class BookDetails(DetailView):
         context = super().get_context_data(**kwargs)
         context['now'] = timezone.now()
         context.update(self.extra_context)
+        print(context)
         return context
 
 
