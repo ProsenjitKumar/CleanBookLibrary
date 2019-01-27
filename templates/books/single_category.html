@@ -5,8 +5,25 @@
 <h3>{{ object.name}}</h3>
 
 
-    {% for book in object.book_set.all %} <a href="{% url 'library:book_details' book.slug %}">{{ book }}</a> <br>{% endfor %}<br>
+    {% for book in object.book_set.all %} <a href="{% url 'library:book_details' book.slug %}"><img src="{{ MEDIA_URL }}{{ book.image.url }}" style="width: 150px;height: 200px"> {{ book }}</a> <br>{% endfor %}<br>
 
-    Total Book: {{ object.book_set.count }}
+    <span>Total Book:</span> {{ object.book_set.count }}
+
+
+     <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}" style="color: #13b521">Previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" style="color: #13b521">Next</a>
+            {% endif %}
+        </span>
+    </div>
 
 {% endblock %}

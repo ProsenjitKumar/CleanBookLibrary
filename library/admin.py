@@ -14,7 +14,7 @@ from .models import (
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name']
     search_fields = ['name']
-    prepopulated_fields = {'slug':('name',)}
+    #prepopulated_fields = {'slug':('name',)}
 
 
 admin.site.register(Category, CategoryAdmin)
@@ -31,7 +31,7 @@ admin.site.register(Book, BookAdmin)
 
 class BookInstanceAdmin(admin.ModelAdmin):
     list_display = ['id', 'imprint', 'due_back']
-    prepopulated_fields = {'slug': ('imprint',)}
+    #prepopulated_fields = {'slug': ('imprint',)}
 
 
 admin.site.register(BookInstance, BookInstanceAdmin)
@@ -40,7 +40,7 @@ admin.site.register(BookInstance, BookInstanceAdmin)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name']
     search_fields = ['first_name', 'last_name']
-    prepopulated_fields = {'slug': ('first_name', 'last_name',)}
+    #prepopulated_fields = {'slug': ('first_name', 'last_name',)}
 
 
 admin.site.register(Author, AuthorAdmin)
@@ -49,7 +49,7 @@ admin.site.register(Author, AuthorAdmin)
 class CurrencyAdmin(admin.ModelAdmin):
     list_display = ['currency']
     search_fields = ['currency']
-    prepopulated_fields = {'slug': ('currency',)}
+    #prepopulated_fields = {'slug': ('currency',)}
 
 
 admin.site.register(Currency, CurrencyAdmin)
@@ -58,7 +58,7 @@ admin.site.register(Currency, CurrencyAdmin)
 class LanguageAdmin(admin.ModelAdmin):
     list_display = ['language']
     search_fields = ['language']
-    prepopulated_fields = {'slug': ('language',)}
+    #prepopulated_fields = {'slug': ('language',)}
 
 
 admin.site.register(Language, LanguageAdmin)
@@ -67,7 +67,7 @@ admin.site.register(Language, LanguageAdmin)
 class EditorAdmin(admin.ModelAdmin):
     list_display = ['editor']
     search_fields = ['editor']
-    prepopulated_fields = {'slug': ('editor',)}
+    #prepopulated_fields = {'slug': ('editor',)}
 
 
 admin.site.register(Editor, EditorAdmin)
@@ -76,7 +76,7 @@ admin.site.register(Editor, EditorAdmin)
 class TagAdmin(admin.ModelAdmin):
     list_display = ['name']
     search_fields = ['name']
-    prepopulated_fields = {'slug': ('name',)}
+    #prepopulated_fields = {'slug': ('name',)}
 
 
 admin.site.register(Tag, TagAdmin)

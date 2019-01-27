@@ -5,6 +5,7 @@ from .views import (
     SingleCategoryView,
     SingleAuthorView,
     SingleLanguage,
+    #AuthorDetailsView,
 )
 
 app_name = 'library'
@@ -15,4 +16,5 @@ urlpatterns = [
     re_path('category/(?P<slug>[-\w]+)', SingleCategoryView.as_view(), name='single_category_details'),
     re_path('author/(?P<slug>[-\w]+)', SingleAuthorView.as_view(), name='single_author_details'),
     re_path('language/(?P<slug>[-\w]+)', SingleLanguage.as_view(), name='single_language_list'),
+    #re_path('author-detail/', AuthorDetailsView.as_view(), name='author_detail_view'),
 ]

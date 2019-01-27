@@ -4,7 +4,7 @@
     {% for object in object_list %}
         <div>
             <label><a href="{% url 'library:book_details' slug=object.slug %}"><img src="{{ MEDIA_URL }}{{ object.image.url }}" style="width: 150px;height: 200px"></a></label>
-            {{ object.title }}<br>
+            {{ object.name_of_the_book }}<br>
         </div>
     {% endfor %}<br>
 
@@ -15,11 +15,11 @@
             {% endif %}
 
             <span class="current">
-                Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+                Page {{ page_obj.start_index }}{{ page_obj.number }} of {{ paginator.num_pages }}. {{ page_obj.end_index }}
             </span>
 
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}" style="color: #13b521">Next</a>
+                <a href="{{ request.path }}?page={{ page_obj.next_page_number }} {{ page_obj.object_list }}" style="color: #13b521">Next</a>
             {% endif %}
         </span>
     </div>

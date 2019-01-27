@@ -5,7 +5,7 @@
 <h3>{{ object.language }}</h3>
 
 
-    {% for book in object.book_set.all %} <a href="{% url 'library:book_details' book.slug %}">{{ book }}</a> <br>{% endfor %}<br>
+    {% for book in object.book_set.all %} <a href="{% url 'library:book_details' book.slug %}"><img src="{{ MEDIA_URL }}{{ book.image.url }}" style="width: 150px;height: 200px"> {{ book }}</a> <br>{% endfor %}<br>
 
     Total Book: {{ object.book_set.count }}
 
