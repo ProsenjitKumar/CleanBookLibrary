@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bf18bc22-2162-46f4-a4bc-6eaf3ccf2a35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/templates/books/book_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/book_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/books/book_lists.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/book_lists.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/books/book_details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#138#163#0#HTML" expanded="true" />
                 <element signature="e#225#259#0#HTML" expanded="true" />
@@ -54,28 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Procfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" selection-start-column="30" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CleanBookLibrary/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="128" column="32" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
-              <folding>
-                <element signature="e#317#323#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -96,14 +74,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/books/book_lists.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="255">
+              <caret line="17" column="180" selection-start-line="17" selection-start-column="180" selection-end-line="17" selection-end-column="180" />
               <folding>
-                <element signature="e#281#315#0#HTML" expanded="true" />
-                <element signature="e#976#998#0#HTML" expanded="true" />
                 <element signature="e#1475#1509#0#HTML" expanded="true" />
                 <element signature="e#2139#2161#0#HTML" expanded="true" />
                 <element signature="e#2480#2502#0#HTML" expanded="true" />
@@ -115,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/books/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
+            <state relative-caret-position="-360">
               <caret line="127" selection-start-line="127" selection-end-line="127" />
             </state>
           </provider>
@@ -152,8 +128,8 @@
         <option value="$PROJECT_DIR$/library/views.py" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/CleanBookLibrary/settings.py" />
-        <option value="$PROJECT_DIR$/templates/books/book_details.html" />
         <option value="$PROJECT_DIR$/templates/books/book_lists.html" />
+        <option value="$PROJECT_DIR$/templates/books/book_details.html" />
       </list>
     </option>
   </component>
@@ -174,22 +150,6 @@
             <path>
               <item name="CleanBookLibrary" type="b2602c69:ProjectViewProjectNode" />
               <item name="CleanBookLibrary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CleanBookLibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CleanBookLibrary" type="462c0819:PsiDirectoryNode" />
-              <item name="CleanBookLibrary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CleanBookLibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CleanBookLibrary" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CleanBookLibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CleanBookLibrary" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="books" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -267,23 +227,23 @@
       <workItem from="1548347563733" duration="9822000" />
       <workItem from="1548424451534" duration="505000" />
       <workItem from="1548454706614" duration="5233000" />
-      <workItem from="1548578281782" duration="3317000" />
+      <workItem from="1548578281782" duration="4765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65344000" />
+    <option name="totallyTimeSpent" value="66792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17760618" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17760618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29036635" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29036635" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -292,7 +252,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.27815467" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.27815467" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -413,39 +373,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/books/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CleanBookLibrary/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="128" column="32" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
-          <folding>
-            <element signature="e#317#323#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/library/models.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -474,10 +403,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/books/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staticfiles/admin/img/calendar-icons.39b290681a8b.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staticfiles/admin/css/base.7c5fa36168a7.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/books/book_lists.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="180" selection-start-line="17" selection-start-column="180" selection-end-line="17" selection-end-column="180" />
+          <folding>
+            <element signature="e#1475#1509#0#HTML" expanded="true" />
+            <element signature="e#2139#2161#0#HTML" expanded="true" />
+            <element signature="e#2480#2502#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CleanBookLibrary/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="128" column="32" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
+          <folding>
+            <element signature="e#317#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/books/book_details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#138#163#0#HTML" expanded="true" />
             <element signature="e#225#259#0#HTML" expanded="true" />
@@ -498,17 +471,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/books/book_lists.html">
+    <entry file="file://$PROJECT_DIR$/library/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
-          <folding>
-            <element signature="e#281#315#0#HTML" expanded="true" />
-            <element signature="e#976#998#0#HTML" expanded="true" />
-            <element signature="e#1475#1509#0#HTML" expanded="true" />
-            <element signature="e#2139#2161#0#HTML" expanded="true" />
-            <element signature="e#2480#2502#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
