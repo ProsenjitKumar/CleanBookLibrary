@@ -8,3 +8,5 @@ after activate your venv run following command
 # python manage.py runserver
 to createsuperuser
 # python manage.py createsuperuser
+
+you can see here as sample https://clean-book-library.herokuapp.com/
