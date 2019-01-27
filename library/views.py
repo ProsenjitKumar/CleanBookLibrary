@@ -1,4 +1,9 @@
+import uuid
+
 from django.shortcuts import render, get_object_or_404
+from django.utils.decorators import method_decorator
+from django.views.decorators.gzip import gzip_page
+from django.views.decorators.http import condition
 from django.views.generic.detail import SingleObjectMixin
 from django.utils import timezone
 from django.views.generic import \
@@ -46,6 +51,12 @@ class BookList(ListView):
         else:
             object_list = self.model.objects.all()
         return object_list
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        context.update(self.extra_context)
+        return context
 
 
 class SingleCategoryView(DetailView):
@@ -99,15 +110,16 @@ class SingleLanguage(DetailView):
 class BookDetails(DetailView):
     model = Book
     template_name = 'books/book_details.html'
-    # extra_context = {
-    #     'category_list': Category.objects.all(),
-    #     'author_list': Author.objects.all(),
-    #     'language_list': Language.objects.all(),
-    # }
+    extra_context = {
+        'category_list': Category.objects.all(),
+        'author_list': Author.objects.all(),
+        'language_list': Language.objects.all(),
+    }
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['now'] = timezone.now()
+        context.update(self.extra_context)
         return context
 
 
