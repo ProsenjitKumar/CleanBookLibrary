@@ -165,7 +165,7 @@
 <!-- nav bar end -->
 
 <br>
-<form class="example" action="" style="margin:auto;max-width:300px">
+<form class="example" action="{% url 'library:book_list' %}" style="margin:auto;max-width:300px">
   <input type="text" name='q' placeholder="Search...">
   <button type="submit" value='{{ request.GET.q }}'><i class="fa fa-search"></i></button>
 </form><br>

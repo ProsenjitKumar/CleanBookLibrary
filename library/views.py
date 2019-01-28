@@ -1,10 +1,3 @@
-import uuid
-
-from django.shortcuts import render, get_object_or_404
-from django.utils.decorators import method_decorator
-from django.views.decorators.gzip import gzip_page
-from django.views.decorators.http import condition
-from django.views.generic.detail import SingleObjectMixin
 from django.utils import timezone
 from django.views.generic import \
     ListView, DetailView
@@ -13,8 +6,6 @@ from .models import (
     Category,
     Author,
     Language,
-    Currency,
-    Tag,
 )
 from django.db.models import Q
 from django.views.generic.base import TemplateView
@@ -70,23 +61,6 @@ class SingleCategoryView(DetailView):
     }
 
 
-# class AuthorDetailsView(SingleObjectMixin, ListView):
-#     template_name = 'books/author.html'
-#     paginate_by = 2
-#
-#     def get(self, request, *args, **kwargs):
-#         self.object = self.get_object(queryset=Author.objects.all())
-#         return super().get(request, *args, **kwargs)
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['author'] = self.object
-#         return context
-#
-#     def get_queryset(self):
-#         return self.object.book_set.all()
-
-
 class SingleAuthorView(DetailView):
     model = Author
     template_name = 'books/single_author.html'
@@ -117,6 +91,7 @@ class BookDetails(DetailView):
     }
 
     def get_context_data(self, **kwargs):
+
         context = super().get_context_data(**kwargs)
         context['now'] = timezone.now()
         context.update(self.extra_context)
